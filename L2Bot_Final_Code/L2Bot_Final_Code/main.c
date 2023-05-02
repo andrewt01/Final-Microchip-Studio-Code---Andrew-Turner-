@@ -19,6 +19,7 @@
 
 //states and motor setup 
 //based on the 5 slices within the visual studio code + a stop case for default and red line detection 
+//global constant values used throughout the code 
 #define state_forward 001
 #define state_slight_left 002
 #define state_hard_left 003
@@ -30,6 +31,7 @@
 Plan of Action:
 setup all needed things like states, LCD, serial and motor control 
 then go into a big switch statement for each state change 
+switch statment used since I like to use them for larger tasks, while if statements for smaller tasks 
 default is stop 
 next go through them and then control motor based on what its doing -- forward would be same or similar values for both motors, etc
 LCD screen for what state and what serial char is being sent to the controller 
@@ -51,7 +53,7 @@ int main(void)
 	//LCD setup and start message 
 	LCD_init();
 	LCDGoToPosition(1,1);
-	sprintf(lcd_string_output, "Hello World");
+	sprintf(lcd_string_output, "Hello World"); 
 	LCDSendString(lcd_string_output);
 	_delay_ms(1000);
 	LCDClearScreen();
@@ -94,9 +96,10 @@ int main(void)
     while (1) 
     {
 		//check if byte is sending - using if statement 
+		//need this so that your code can work, it will not work without it 
 		if(serialCheckRxComplete() != 0)
 		{
-			serialInput = USART_vReceiveByte();
+			serialInput = USART_vReceiveByte(); //set serial input to the received byte 
 		}
 		uart_putchar('\n', &mystdout); //found out my LCD screen would not work without this 
 		

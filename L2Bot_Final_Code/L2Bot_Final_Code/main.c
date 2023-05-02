@@ -18,12 +18,24 @@
 
 
 //states and motor setup 
+//based on the 5 slices within the visual studio code + a stop case for default and red line detection 
 #define state_forward 001
 #define state_slight_left 002
 #define state_hard_left 003
 #define state_slight_right 004
 #define state_hard_right 005
 #define state_stop 006 //default
+
+/*
+Plan of Action:
+setup all needed things like states, LCD, serial and motor control 
+then go into a big switch statement for each state change 
+default is stop 
+next go through them and then control motor based on what its doing -- forward would be same or similar values for both motors, etc
+LCD screen for what state and what serial char is being sent to the controller 
+next check if a new char is being sent to get out of the last state and change states, keep going this until the robot finds the red line
+red line detection means robot stop so therefore the stop state would be called  
+*/
 
 int main(void)
 {
@@ -36,7 +48,7 @@ int main(void)
 	//On-board LED 
 	DDRC |= 1 << PINC2; 
 	
-	//LCD 
+	//LCD setup and start message 
 	LCD_init();
 	LCDGoToPosition(1,1);
 	sprintf(lcd_string_output, "Hello World");
@@ -44,30 +56,31 @@ int main(void)
 	_delay_ms(1000);
 	LCDClearScreen();
 	
-	//serial
+	//serial setup
 	AD_init();
 	USART_vInit();
 	sei();
 	LCDClearScreen();
 	uint8_t serialInput; //for visual studios code to change states 
 	
-	//motor 
+	//motor setup
 	HBridgeInit();
 	
 	//sides
 	//side 0 should be the terminal closest to the power terminal on my micro board 
+	//with my l2bot configuration that is my right motor 
 	uint8_t right = 0;
 	uint8_t left = 1;
 	
-	//speed 
+	//speed controls 
 	uint8_t speed_forward = 50; //old speed = 50, new speed = 75
 	uint8_t speed_slight_left = 30;
-	uint8_t speed_slight_right = 30; //old speed = 25, new speed = 30
+	uint8_t speed_slight_right = 30; //old speed = 25, new speed = 30 
 	uint8_t speed_hard_left = 75; //75 old speed 
 	uint8_t speed_hard_right = 75; // 75 old speed
 	uint8_t speed_stop = 0;
 	
-	//direction 
+	//direction controls 
 	uint8_t reverse = 0;
 	uint8_t forward = 1;
 	uint8_t stopped = NULL; //no direction since the motors are not moving at all 
@@ -85,9 +98,9 @@ int main(void)
 		{
 			serialInput = USART_vReceiveByte();
 		}
-		uart_putchar('\n', &mystdout);
+		uart_putchar('\n', &mystdout); //found out my LCD screen would not work without this 
 		
-		switch(state)
+		switch(state) //default state of stop
 		{
 			case state_stop: //default state -- no movement 
 		

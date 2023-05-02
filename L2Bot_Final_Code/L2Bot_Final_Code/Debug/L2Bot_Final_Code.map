@@ -27,7 +27,7 @@ c:/users/aturner2/desktop/ur1/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/g
 c:/users/aturner2/desktop/ur1/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3x.o)
                               c:/users/aturner2/desktop/ur1/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3.o) (__mulsf3x)
 c:/users/aturner2/desktop/ur1/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
-                              C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51/crtatmega1284.o (exit)
+                              C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51/crtatmega1284p.o (exit)
 c:/users/aturner2/desktop/ur1/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_copy_data.o)
                               LCD_lib.o (__do_copy_data)
 c:/users/aturner2/desktop/ur1/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_clear_bss.o)
@@ -57,8 +57,8 @@ __iob               0x6               c:/users/aturner2/desktop/ur1/7.0/toolchai
 
 Discarded input sections
 
- .data          0x00000000        0x0 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51/crtatmega1284.o
- .bss           0x00000000        0x0 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51/crtatmega1284.o
+ .data          0x00000000        0x0 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
+ .bss           0x00000000        0x0 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
  .text          0x00000000        0x0 A2D_lib.o
  .data          0x00000000        0x0 A2D_lib.o
  .bss           0x00000000        0x0 A2D_lib.o
@@ -207,7 +207,7 @@ user_signatures  0x00850000         0x00000400         rw !x
 Linker script and memory map
 
 Address of section .data set to 0x800100
-LOAD C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51/crtatmega1284.o
+LOAD C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
 LOAD A2D_lib.o
 LOAD LCD_lib.o
 LOAD main.o
@@ -220,9 +220,9 @@ START GROUP
 LOAD c:/users/aturner2/desktop/ur1/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a
 LOAD c:/users/aturner2/desktop/ur1/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a
 LOAD c:/users/aturner2/desktop/ur1/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a
-LOAD C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51\libatmega1284.a
+LOAD C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51\libatmega1284p.a
 END GROUP
-                [0x00000000]                __TEXT_REGION_ORIGIN__ = DEFINED (__TEXT_REGION_ORIGIN__)?__TEXT_REGION_ORIGIN__:0x0
+                0x00000000                __TEXT_REGION_ORIGIN__ = DEFINED (__TEXT_REGION_ORIGIN__)?__TEXT_REGION_ORIGIN__:0x0
                 [0x00800100]                __DATA_REGION_ORIGIN__ = DEFINED (__DATA_REGION_ORIGIN__)?__DATA_REGION_ORIGIN__:0x800100
                 [0x00020000]                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
                 [0x00004000]                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xff00
@@ -324,7 +324,7 @@ END GROUP
 
 .text           0x00000000     0x1116
  *(.vectors)
- .vectors       0x00000000       0x8c C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51/crtatmega1284.o
+ .vectors       0x00000000       0x8c C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
                 0x00000000                __vector_default
                 0x00000000                __vectors
  *(.vectors)
@@ -352,13 +352,13 @@ END GROUP
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x0000008c        0x0 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51/crtatmega1284.o
+ .init0         0x0000008c        0x0 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
                 0x0000008c                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x0000008c        0xc C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51/crtatmega1284.o
+ .init2         0x0000008c        0xc C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
  *(.init2)
  *(.init3)
  *(.init3)
@@ -377,10 +377,10 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x000000c2        0x6 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51/crtatmega1284.o
+ .init9         0x000000c2        0x6 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
  *(.init9)
  *(.text)
- .text          0x000000c8        0x2 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51/crtatmega1284.o
+ .text          0x000000c8        0x2 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
                 0x000000c8                __vector_22
                 0x000000c8                __vector_28
                 0x000000c8                __vector_1
@@ -653,7 +653,7 @@ END GROUP
 .note.gnu.avr.deviceinfo
                 0x00000000       0x40
  .note.gnu.avr.deviceinfo
-                0x00000000       0x40 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51/crtatmega1284.o
+                0x00000000       0x40 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
 
 .note.gnu.build-id
  *(.note.gnu.build-id)
@@ -688,7 +688,7 @@ END GROUP
 
 .debug_info     0x00000000     0x1978
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x792 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51/crtatmega1284.o
+ .debug_info    0x00000000      0x792 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
  .debug_info    0x00000792      0x164 A2D_lib.o
  .debug_info    0x000008f6      0x49e LCD_lib.o
  .debug_info    0x00000d94      0x897 main.o
@@ -697,7 +697,7 @@ END GROUP
 
 .debug_abbrev   0x00000000      0xdb1
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x729 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51/crtatmega1284.o
+ .debug_abbrev  0x00000000      0x729 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
  .debug_abbrev  0x00000729       0xc8 A2D_lib.o
  .debug_abbrev  0x000007f1      0x18a LCD_lib.o
  .debug_abbrev  0x0000097b      0x220 main.o
@@ -706,7 +706,7 @@ END GROUP
 
 .debug_line     0x00000000      0xcab
  *(.debug_line .debug_line.* .debug_line_end)
- .debug_line    0x00000000      0x16a C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51/crtatmega1284.o
+ .debug_line    0x00000000      0x16a C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
  .debug_line    0x0000016a      0x118 A2D_lib.o
  .debug_line    0x00000282      0x297 LCD_lib.o
  .debug_line    0x00000519      0x4b6 main.o
@@ -723,7 +723,7 @@ END GROUP
 
 .debug_str      0x00000000      0x75a
  *(.debug_str)
- .debug_str     0x00000000      0x296 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284/avr51/crtatmega1284.o
+ .debug_str     0x00000000      0x296 C:/Users/aturner2/Desktop/UR1/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
  .debug_str     0x00000296      0x1d0 A2D_lib.o
                                 0x204 (size before relaxing)
  .debug_str     0x00000466      0x128 LCD_lib.o
